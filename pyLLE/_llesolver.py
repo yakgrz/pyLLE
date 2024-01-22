@@ -254,7 +254,10 @@ class LLEsolver(object):
         - R <float>: ring radius
         - gamma <float>: Non linear index of the material
         - dispfile <str> : str pointing to a .csv file where the azimuthal mode orders and corresponding resonances are saved
+        - Bragg <float> :  coupling constant between the forward and backward modes via Bragg PhCr
         - loop_ref <complex>: complex reflection coefficiency describing isolator and loop mirror reflector
+            -loop_ref_real <float>: real part of the above for passing to Julia
+            -loop_ref_imag <float>: imaginary part of the above for passing to Julia
     **sim <dict>**
 
         - Tscan <float>: length of the simulation (in unit of round trip)
@@ -296,6 +299,7 @@ class LLEsolver(object):
         assert "R" in self._res.keys(), "Please provide R"
         assert "Tscan" in self._sim.keys(), "Please provide Tscan"
         assert "dispfile" in self._res.keys(), "Please provide dispfile"
+        assert "Bragg" in self._res.keys(), "Please provide Bragg reflection constant"
 
         if not "D1_manual" in self._sim.keys():
             self._sim["D1_manual"] = None
@@ -498,7 +502,10 @@ class LLEsolver(object):
             "Qc": self._res["Qc"],
             "γ": self._res["gamma"],
             "dispfile": self._res["dispfile"],
-            "loop_ref":self._res["loop_ref"]
+            "loop_ref":self._res["loop_ref"],
+            "Bragg":self._res["Bragg"],
+            "loop_ref_real":np.real(self._res["loop_ref"]),
+            "loop_ref_imag":np.imag(self._res["loop_ref"])
         }
 
         sim = {
@@ -953,9 +960,6 @@ class LLEsolver(object):
         Ein = np.zeros(μ.size)
         Ein[pmp_ind] = np.sqrt(Pin) * μ.size
         Ein_couple = np.sqrt(θ) * Ein
-
-        # --setting up the loop reflector-- #
-        loop_R=self._res["loop_ref"]
 
         # -- Define Initial Guess --
         sech = lambda x: 1 / np.cosh(x)

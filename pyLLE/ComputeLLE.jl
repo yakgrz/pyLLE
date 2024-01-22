@@ -8,7 +8,7 @@ function Loadh5Param(dir)
     res = Dict()
     sim = Dict()
     sim_name = ["res", "sim"]
-    par = [["Qc", "R", "ng", "Qi", "gamma","dispfile"], ["Pin", "Tscan", "domega_init", "domega_end", "domega_stop", "domega", "f_pmp", "mu_sim_center", "ind_pmp", "Dint", "ind_pump_sweep","f_center", "phi_pmp", "D1", "DKSinit_imag","DKSinit_real", "num_probe"]]
+    par = [["Qc", "R", "ng", "Qi", "gamma","dispfile","Bragg","loop_ref_real","loop_ref_imag"], ["Pin", "Tscan", "domega_init", "domega_end", "domega_stop", "domega", "f_pmp", "mu_sim_center", "ind_pmp", "Dint", "ind_pump_sweep","f_center", "phi_pmp", "D1", "DKSinit_imag","DKSinit_real", "num_probe"]]
     cnt = 1
     for sim_par = [res, sim]
         for it = par[cnt]
@@ -62,6 +62,10 @@ ng = res["ng"][1]
 R = res["R"][1]
 γ = res["gamma"][1]
 L = 2*pi*R
+#including now the loop mirror and isolator and the bragg coupling term introduced by the Bragg reflector
+Bragg_R=res["Bragg"]
+loop_r=res["loop_ref_real"]+1im*res["loop_ref_imag"]
+
 
 Q0 = res["Qi"][1]
 Qc = res["Qc"][1]
@@ -190,15 +194,19 @@ for ii in collect(1:length(fpmp))
 end
 # -- Initial State --
 # ---------------------------------------------------------------
-u0 = 1im * zeros(length(μ),1)
-u0[:, 1] = DKSinit
+#forward modes
+u0f = 1im * zeros(length(μ),1)
+u0f[:, 1] = DKSinit
+#backward modes
+u0b = 1im * zeros(length(μ),1)
+u0b[:, 1] = DKSinit
 
 # -- Output Dict --
 # ---------------------------------------------------------------
 S = Dict()
 # num_probe= 5000
-S["u_probe"] = 1im*zeros(num_probe, length(u0))
-S["driving_force"] = 1im*zeros(num_probe,length(u0))
+S["u_probe"] = 1im*zeros(num_probe, length(u0f))
+S["driving_force"] = 1im*zeros(num_probe,length(u0f))
 S["detuning"] = zeros(num_probe,)
 S["t_sim"] = zeros(num_probe,)
 S["kappa_ext"] = [κext]
@@ -229,12 +237,12 @@ function ProgressBar_CallBack(it, Nt, S, u0, param)
     return param
 end
 
-function SaveStatus_CallBack(it, Nt, S, u0f,u0b, param)
+function SaveStatus_CallBack(it, Nt, S, u0 param)
     # -- Save the data for a data set of 1000 --
     if (it*num_probe/Nt > param["probe"])
         param["probe"] += 1;
-        #adjusted to add the forward and backward fields together
-        S["u_probe"][param["probe"],:]=u0f[:,1]+u0b[:,1] #* exp(1im*tsim[Int(it)]*Δω_pmp[Int(it)]/tR);
+
+        S["u_probe"][param["probe"],:]=u0[:,1] #* exp(1im*tsim[Int(it)]*Δω_pmp[Int(it)]/tR);
         S["detuning"][param["probe"]] = δω_all[ind_sweep[1]][it];
         S["t_sim"][param["probe"]] = t_sim[it]
         S["driving_force"][param["probe"],:] = Fdrive(it)
@@ -281,19 +289,35 @@ maxiter = 10
 success = false
 
 
-L½prop = 1im .*zeros(length(μ),1)
-L½prop_cpl = 1im .*zeros(length(μ),1)
-A_L½prop = 1im .*zeros(length(μ),1)
-NL½prop_0 = 1im .*zeros(length(μ),1)
-CPL½prop_0 = 1im .*zeros(length(μ),1)
-A½prop = 1im .*zeros(length(μ),1)
-Aprop = 1im .*zeros(length(μ),1)
-NL½prop_1 = 1im .*zeros(length(μ),1)
-NLprop = 1im .*zeros(length(μ),1)
-Force = 1im .*zeros(length(μ),1)
-retL = 1im .*zeros(length(μ),1)
-Eout = 1im .*zeros(length(μ),1)
-Aout = 1im .*zeros(length(μ),1)
+L½propf = 1im .*zeros(length(μ),1)
+L½prop_cplf = 1im .*zeros(length(μ),1)
+A_L½propf = 1im .*zeros(length(μ),1)
+NL½prop_0f = 1im .*zeros(length(μ),1)
+CPL½prop_0f = 1im .*zeros(length(μ),1)
+A½propf = 1im .*zeros(length(μ),1)
+Apropf = 1im .*zeros(length(μ),1)
+NL½prop_1f = 1im .*zeros(length(μ),1)
+NLpropf = 1im .*zeros(length(μ),1)
+Forcef = 1im .*zeros(length(μ),1)
+retLf = 1im .*zeros(length(μ),1)
+Eoutf = 1im .*zeros(length(μ),1)
+Aoutf = 1im .*zeros(length(μ),1)
+
+
+L½propb = 1im .*zeros(length(μ),1)
+L½prop_cplb = 1im .*zeros(length(μ),1)
+A_L½propb = 1im .*zeros(length(μ),1)
+NL½prop_0b = 1im .*zeros(length(μ),1)
+CPL½prop_0b = 1im .*zeros(length(μ),1)
+A½propb = 1im .*zeros(length(μ),1)
+Apropb = 1im .*zeros(length(μ),1)
+NL½prop_1b = 1im .*zeros(length(μ),1)
+NLpropb = 1im .*zeros(length(μ),1)
+Forceb = 1im .*zeros(length(μ),1)
+retLb = 1im .*zeros(length(μ),1)
+Eoutb = 1im .*zeros(length(μ),1)
+Aoutb = 1im .*zeros(length(μ),1)
+
 retNL = 1im .*zeros(length(μ),1)
 retcpl = 1im .*zeros(length(μ),1)
 
@@ -336,20 +360,32 @@ function SSFM½step(A0f, A0b, it, param)
     # ----------------------------------------------------------------------------------------
     # -- Define the Linear, Non-Linear and drive Force ---
     # Purpose is for easy modification to ad NL or other terms
-    function FFT_Lin(it) 
-        return -α/2 .+ 1im .* (Dint_shift .- δω_all[1][it]  )*tR
+    
+    #Propagators for the forward modes
+    function FFT_Linf(it,bb_0) 
+        return -α/2 .+ 1im .* (Dint_shift .- δω_all[1][it])*tR+1im*Bragg_R/2*fft_plan(bb_0)
     end
 
-    function NL(uu, it)
-        return -1im*( γ*L* abs.(uu).^2 )
+    function NLf(ff, bb, it)
+        return -1im*( γ*L* abs.(ff).^2 )
     end
+
+    #Propagators for the backward modes
+    function FFT_Linf(it,ff_0) 
+        return -α/2 .+ 1im .* (Dint_shift .- δω_all[1][it]  )*tR+1im*Bragg_R/2*fft_plan(bb_0)
+    end
+
+    function NLf(ff, bb, it)
+        return -1im*( γ*L* abs.(ff).^2 )
+    end
+
 
     # --- Linear propagation ---
     
     A0 = A0 .+ Fdrive(Int(it)) .*sqrt(κext) .* dt;        
     
     L½prop .= exp.(FFT_Lin(Int(it)) .* dt/2);
-    A_L½prop .= ifft_plan* (fft_plan*(A0) .* L½prop);
+    A_L½prop .= ifft_plan* (fft_plan*(A0f) .* L½prop);
     NL½prop_0 .= NL(A0, it);
     A½prop .= A0;
     Aprop .= 1im .* zeros(size(A0));
@@ -413,8 +449,9 @@ function MainSolver(Nt, S, u0f,u0b)
     for it in loops
         # -- Solve the Split Step Fourier Step --
         # u0 = SSFM(u0, it, param)
-        u0f,u0b = SSFM½step(u0,u0b, it, param)
-        
+        u0f,u0b = SSFM½step(u0f,u0b, it, param)
+        #total field is the sum of the forward and backward fields
+        u0=u0f+u0b
         # -- Update the Progress bar --
         param = ProgressBar_CallBack(Int(it), Nt, S, u0, param)
         # -- Save the Data in the dict --
@@ -429,4 +466,4 @@ end
 logfile =  open(tmp_dir * "log.log" ,"w")
 write(logfile,string(Int(round(0))) * "\n")
 close(logfile)
-MainSolver(Nt, S, u0)
+MainSolver(Nt, S, u0f,u0b)
