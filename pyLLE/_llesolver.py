@@ -1384,6 +1384,10 @@ class LLEsolver(object):
             res_table.add_row(
                 ["loop_ref", "{:.3f}".format(self._res["loop_ref"] ), ""]
             )
+        if "Bragg" in self._res:
+            res_table.add_row(
+                ["Bragg", "{:.3f}".format(self._res["loop_ref"] ), "Mode shift (Hz)"]
+            )
         to_print += res_table.get_string()
         to_print += "\n"
         to_print += "\n"

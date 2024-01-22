@@ -362,51 +362,71 @@ function SSFM½step(A0f, A0b, it, param)
     # Purpose is for easy modification to ad NL or other terms
     
     #Propagators for the forward modes
-    function FFT_Linf(it,bb_0) 
-        return -α/2 .+ 1im .* (Dint_shift .- δω_all[1][it])*tR+1im*Bragg_R/2*fft_plan(bb_0)
+    function FFT_Lin(it) 
+        return -α/2 .+ 1im .* (Dint_shift .- δω_all[1][it])*tR
     end
 
     function NLf(ff, bb, it)
-        return -1im*( γ*L* abs.(ff).^2 )
+        #first term is SPM, while second is XPM
+        return -1im*( γ*L* abs.(ff).^2.+2*γ*L*sum(abs.(bb).^ 2) )
     end
 
-    #Propagators for the backward modes
-    function FFT_Linf(it,ff_0) 
-        return -α/2 .+ 1im .* (Dint_shift .- δω_all[1][it]  )*tR+1im*Bragg_R/2*fft_plan(bb_0)
-    end
-
-    function NLf(ff, bb, it)
-        return -1im*( γ*L* abs.(ff).^2 )
+    #nonlinear propagator for backward mode
+    function NLb(ff, bb, it)
+        #first term is SPM, while second is XPM
+        return -1im*( γ*L* abs.(bb).^2.+2*γ*L*sum(abs.(ff).^ 2) )
     end
 
 
     # --- Linear propagation ---
-    
-    A0 = A0 .+ Fdrive(Int(it)) .*sqrt(κext) .* dt;        
-    
+    #making the one hot vectors of just the pump mode in 
+    #forward and backward direction
+    #center index is given by μ0 = Int(1 + (length(μ)-1)/2) 
+
+    bb_0 = [1im*zeros(length(μ),1)]
+    bb_0[μ0] = A0b[μ0]
+    ff_0 = [1im*zeros(length(μ),1)]
+    ff_0[μ0]= A0f[μ0]
+
+    #only the forward direction is pumped for now and has the reflector active on the 
+    #pump mode
+    A0f = A0f .+ Fdrive(Int(it)) .*sqrt(κext) .* dt.+ sqrt(2/α)*κext*loop_r*bb_0*dt;        
+    #forward and backward have same general linear operator
     L½prop .= exp.(FFT_Lin(Int(it)) .* dt/2);
-    A_L½prop .= ifft_plan* (fft_plan*(A0f) .* L½prop);
-    NL½prop_0 .= NL(A0, it);
-    A½prop .= A0;
-    Aprop .= 1im .* zeros(size(A0));
+    #but need to add in the Bragg term differently for each mode
+    A_L½propf .= ifft_plan* (fft_plan*(A0f) .* L½prop.+1im*Bragg_R/2*fft_plan(bb_0).*dt/2);
+    A_L½propb .= ifft_plan* (fft_plan*(A0f) .* L½prop.+1im*Bragg_R/2*fft_plan(ff_0).*dt/2);
+    #here nonlinear operators are different for forward and backward
+    NL½prop_0f .= NLf(A0f, A0b, it);
+    NL½prop_0b .= NLb(A0f, A0b, it);
+    A½propf .= A0f;
+    A½propb .= A0b;
+    Apropf .= 1im .* zeros(size(A0f));
+    Apropb .= 1im .* zeros(size(A0b));
     
     # --- iterative procedur to find ^LN^(t + δt, ω) ---
     success = false;
     for ii in collect(1:maxiter)
         err = 0.0
         success = false
-        NL½prop_1 .= NL(A½prop, it);
-        NLprop .= (NL½prop_0 .+ NL½prop_1) .* dt/2;
-        Aprop .= ifft_plan*( fft_plan*(A_L½prop .* exp.(NLprop) ) .* L½prop )
-
+        #nonlinear half and full steps for both directions
+        NL½prop_1f .= NLf(A½prof, it);
+        NL½prop_1b .= NLb(A½prob, it);
+        NLpropf .= (NL½prop_0f .+ NL½prop_1f) .* dt/2;
+        NLpropb .= (NL½prop_0b .+ NL½prop_1b) .* dt/2;
+        #finsh the full linear step for both directions (need to add in the bragg term half step for each again)
+        Apropf .= ifft_plan*( fft_plan*(A_L½propf .* exp.(NLpropf) ) .* L½propf + 1im*Bragg_R/2*fft_plan(bb_0).*dt/2)
+        Apropb .= ifft_plan*( fft_plan*(A_L½propb .* exp.(NLpropb) ) .* L½propb + 1im*Bragg_R/2*fft_plan(ff_0).*dt/2)
         # --- check if we concerge or not ---
-        err = LinearAlgebra.norm(Aprop-A½prop,2)/LinearAlgebra.norm(A½prop,2)
+        #taking the average of error in both directions
+        err = LinearAlgebra.norm(Apropf-A½propf,2)/LinearAlgebra.norm(A½propf,2)/2+LinearAlgebra.norm(Apropb-A½propb,2)/LinearAlgebra.norm(A½propb,2)/2
         if (err < tol)
             success = true
             break
         else
             success = false
-            A½prop .= Aprop
+            A½propf .= Apropf
+            A½propb .= Apropb
         end
     end
 
