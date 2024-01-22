@@ -254,7 +254,7 @@ class LLEsolver(object):
         - R <float>: ring radius
         - gamma <float>: Non linear index of the material
         - dispfile <str> : str pointing to a .csv file where the azimuthal mode orders and corresponding resonances are saved
-
+        - loop_ref <complex>: complex reflection coefficiency describing isolator and loop mirror reflector
     **sim <dict>**
 
         - Tscan <float>: length of the simulation (in unit of round trip)
@@ -498,6 +498,7 @@ class LLEsolver(object):
             "Qc": self._res["Qc"],
             "γ": self._res["gamma"],
             "dispfile": self._res["dispfile"],
+            "loop_ref":self._res["loop_ref"]
         }
 
         sim = {
@@ -953,6 +954,9 @@ class LLEsolver(object):
         Ein[pmp_ind] = np.sqrt(Pin) * μ.size
         Ein_couple = np.sqrt(θ) * Ein
 
+        # --setting up the loop reflector-- #
+        loop_R=self._res["loop_ref"]
+
         # -- Define Initial Guess --
         sech = lambda x: 1 / np.cosh(x)
         η = δω / α  # need to be fixed
@@ -1371,6 +1375,10 @@ class LLEsolver(object):
         if "n2" in self._res:
             res_table.add_row(
                 ["n2", "{:.3f}".format(self._res["n2"] * 1e19), "x1e-19 m2/W"]
+            )
+        if "loop_ref" in self._res:
+            res_table.add_row(
+                ["loop_ref", "{:.3f}".format(self._res["loop_ref"] ), ""]
             )
         to_print += res_table.get_string()
         to_print += "\n"

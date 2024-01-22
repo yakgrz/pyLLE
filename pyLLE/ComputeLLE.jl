@@ -229,11 +229,12 @@ function ProgressBar_CallBack(it, Nt, S, u0, param)
     return param
 end
 
-function SaveStatus_CallBack(it, Nt, S, u0, param)
+function SaveStatus_CallBack(it, Nt, S, u0f,u0b, param)
     # -- Save the data for a data set of 1000 --
     if (it*num_probe/Nt > param["probe"])
         param["probe"] += 1;
-        S["u_probe"][param["probe"],:]=u0[:,1] #* exp(1im*tsim[Int(it)]*Δω_pmp[Int(it)]/tR);
+        #adjusted to add the forward and backward fields together
+        S["u_probe"][param["probe"],:]=u0f[:,1]+u0b[:,1] #* exp(1im*tsim[Int(it)]*Δω_pmp[Int(it)]/tR);
         S["detuning"][param["probe"]] = δω_all[ind_sweep[1]][it];
         S["t_sim"][param["probe"]] = t_sim[it]
         S["driving_force"][param["probe"],:] = Fdrive(it)
@@ -296,7 +297,7 @@ Aout = 1im .*zeros(length(μ),1)
 retNL = 1im .*zeros(length(μ),1)
 retcpl = 1im .*zeros(length(μ),1)
 
-function SSFM½step(A0, it, param)
+function SSFM½step(A0f, A0b, it, param)
     # ----------------------------------------------------------------------------------------
     # Standard split step fourier method
     # ∂A/∂t (t, τ)= [L + NL]A + Fdrive
@@ -374,14 +375,15 @@ function SSFM½step(A0, it, param)
     end
 
     if success
-        u0 = Aprop
-        return u0
+        u0f = Apropf
+        u0b= Apropb
+        return u0f,u0b
     else
         print("Convergence Error")
     end
 end
 
-function MainSolver(Nt, S, u0)
+function MainSolver(Nt, S, u0f,u0b)
     # Here we are solvint the most general form of the χ(3)-only-LLE
     # For full explenation on how to derive this equation (usually from CMT)
     # please refere Taheri, H. et al  (2017). "Optical lattice trap for Kerr
@@ -411,7 +413,7 @@ function MainSolver(Nt, S, u0)
     for it in loops
         # -- Solve the Split Step Fourier Step --
         # u0 = SSFM(u0, it, param)
-        u0 = SSFM½step(u0, it, param)
+        u0f,u0b = SSFM½step(u0,u0b, it, param)
         
         # -- Update the Progress bar --
         param = ProgressBar_CallBack(Int(it), Nt, S, u0, param)
