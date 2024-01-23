@@ -790,7 +790,8 @@ class LLEsolver(object):
                 julia = bin
 
             try:
-                self.JuliaSolver = sub.Popen(julia, stdout=sub.PIPE, stderr=sub.PIPE)
+                self.JuliaSolver = sub.Popen(julia, stdin= sub.PIPE,stdout=sub.PIPE, stderr=sub.PIPE,
+                                             text=True, bufsize=1, universal_newlines=True)
             except Exception as err:
                 print(err)
                 raise ValueError(
@@ -807,7 +808,8 @@ class LLEsolver(object):
                 str(maxiter),
                 str(step_factor),
             ]
-            self.JuliaSolver = sub.Popen(command, stdout=sub.PIPE, stderr=sub.PIPE)
+            self.JuliaSolver = sub.Popen(command, stdin= sub.PIPE, stdout=sub.PIPE, stderr=sub.PIPE,
+                                         text=True, bufsize=1, universal_newlines=True)
             fname = self.tmp_dir + "log.log"
             if verbose:
                 print("Launching Julia....")
@@ -850,6 +852,17 @@ class LLEsolver(object):
 
             # fetch if any errors:
             err = False
+            #uncomment the following if the computation ends 
+            #too quickly, that means there is a Julia erorr in the
+            #computeLLE.jl file
+
+            #j_output,j_err=self.JuliaSolver.communicate()
+            #print("Julia Output")
+            #print(j_output)
+            #print("Julia Errors")
+            #print(j_err)
+
+            #uncomment stops here for debugging
             if not self.JuliaSolver.poll() == None:
                 _, err = self.JuliaSolver.communicate()
                 if not err.decode() == "":
@@ -884,7 +897,7 @@ class LLEsolver(object):
                         print("line 686")
                         print(e)
                         pass
-                    time.sleep(1)
+                    time.sleep(2)
                 line, length, pgrs, tb_up = Pbar(100, pgrs, tb_up, conv_err)
                 time_taken = time.time() - start
                 end = time.time()
@@ -902,7 +915,14 @@ class LLEsolver(object):
         DisplaySim()
         time.sleep(2)
         JuliaLog, start_time = LaunchJulia(bin)
+        #print("hi")
+        #j_output,j_err=self.JuliaSolver.communicate()
+        #print("Julia Output")
+        #print(j_output)
+        #print("Julia Errors")
+        #print(j_err)
         ProbeProgress(JuliaLog, start_time)
+        
 
     def SolveSteadyState(self, do_plot=True):
         """
