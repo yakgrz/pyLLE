@@ -502,10 +502,9 @@ class LLEsolver(object):
             "Qc": self._res["Qc"],
             "γ": self._res["gamma"],
             "dispfile": self._res["dispfile"],
-            "loop_ref":self._res["loop_ref"],
             "Bragg":self._res["Bragg"],
-            "loop_ref_real":np.real(self._res["loop_ref"]),
-            "loop_ref_imag":np.imag(self._res["loop_ref"])
+            "loop_ref_real":np.real(self._res["loop_ref_real"]),
+            "loop_ref_imag":np.imag(self._res["loop_ref_imag"]),
         }
 
         sim = {
@@ -591,6 +590,9 @@ class LLEsolver(object):
                         "R": ("R", 1e6, "µm"),
                         "Qi": ("Qi", 1e-6, "M"),
                         "gamma": ("\u03B3", 1, ""),
+                        "Bragg": ("Bragg", 1e-6,"MHz"),
+                        "loop_ref_real":("loop_ref_real",1,""),
+                        "loop_ref_imag":("loop_ref_imag",1,""),
                     }
                 else:
                     dic_res = {
@@ -598,6 +600,9 @@ class LLEsolver(object):
                         "Qi": ("Qi", 1e-6, "M"),
                         "Qc": ("Qc", 1e-6, "M"),
                         "gamma": ("\u03B3", 1, ""),
+                        "Bragg": ("Bragg Shift", 1e-6,"MHz"),
+                        "loop_ref_real":("loop_ref_real",1,""),
+                        "loop_ref_imag":("loop_ref_imag",1,""),
                     }
             except:
                 dic_res = {
@@ -605,6 +610,9 @@ class LLEsolver(object):
                     "Qi": ("Qi", 1e-6, "M"),
                     "Qc": ("Qc", 1e-6, "M"),
                     "gamma": ("\u03B3", 1, ""),
+                    "Bragg": ("Bragg Shift", 1e-6,"MHz"),
+                    "loop_ref_real":("loop_ref_real",1,""),
+                    "loop_ref_imag":("loop_ref_imag",1,""),
                 }
 
             return dic_sim, dic_res
@@ -1040,6 +1048,7 @@ class LLEsolver(object):
 
         time.sleep(2)
         drct = self.tmp_dir
+        print("wtf")
         with h5py.File(self.tmp_dir + "ResultsJulia.h5", "r") as S:
             if self._debug:
                 self._logger.info(
@@ -1380,13 +1389,13 @@ class LLEsolver(object):
             res_table.add_row(
                 ["n2", "{:.3f}".format(self._res["n2"] * 1e19), "x1e-19 m2/W"]
             )
-        if "loop_ref" in self._res:
+        if "loop_ref_real" in self._res:
             res_table.add_row(
-                ["loop_ref", "{:.3f}".format(self._res["loop_ref"] ), ""]
+                ["loop_ref", "{:.3f}".format(self._res["loop_ref_real"]+1j*self._res["loop_ref_imag"] ), ""]
             )
         if "Bragg" in self._res:
             res_table.add_row(
-                ["Bragg", "{:.3f}".format(self._res["loop_ref"] ), "Mode shift (Hz)"]
+                ["Bragg", "{:.3f}".format(self._res["Bragg"] ), "Mode shift (Hz)"]
             )
         to_print += res_table.get_string()
         to_print += "\n"
@@ -1463,6 +1472,12 @@ class _dic2struct:
             table.add_row(["γ", self._dic["γ"], "Non-linear coefficient", "W^-1 m^-1"])
         table.add_row(
             ["dispfile", self._dic["dispfile"], "mode/resonance frequency file", ""]
+        )
+        table.add_row(
+            ["Bragg", self._dic["Bragg"]/1e6, "Bragg Shift (MHz)", ""]
+        )
+        table.add_row(
+            ["Loop Reflector", self._dic["loop_ref_real"]+1j*self._dic["loop_ref_imag"], "reflection constant", ""]
         )
         table.vrules = False
         table.header = True

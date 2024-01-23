@@ -237,7 +237,7 @@ function ProgressBar_CallBack(it, Nt, S, u0, param)
     return param
 end
 
-function SaveStatus_CallBack(it, Nt, S, u0 param)
+function SaveStatus_CallBack(it, Nt, S, u0, param)
     # -- Save the data for a data set of 1000 --
     if (it*num_probe/Nt > param["probe"])
         param["probe"] += 1;
@@ -368,13 +368,13 @@ function SSFM½step(A0f, A0b, it, param)
 
     function NLf(ff, bb, it)
         #first term is SPM, while second is XPM
-        return -1im*( γ*L* abs.(ff).^2.+2*γ*L*sum(abs.(bb).^ 2) )
+        return -1im*( γ*L* abs.(ff).^2 .+ 2*γ*L*sum(abs.(bb).^ 2) )
     end
 
     #nonlinear propagator for backward mode
     function NLb(ff, bb, it)
         #first term is SPM, while second is XPM
-        return -1im*( γ*L* abs.(bb).^2.+2*γ*L*sum(abs.(ff).^ 2) )
+        return -1im*( γ*L* abs.(bb).^2 .+2 *γ*L*sum(abs.(ff).^ 2) )
     end
 
 
@@ -390,12 +390,12 @@ function SSFM½step(A0f, A0b, it, param)
 
     #only the forward direction is pumped for now and has the reflector active on the 
     #pump mode
-    A0f = A0f .+ Fdrive(Int(it)) .*sqrt(κext) .* dt.+ sqrt(2/α)*κext*loop_r*bb_0*dt;        
+    A0f = A0f .+ Fdrive(Int(it)) .*sqrt(κext) .* dt .+ sqrt(2/α)*κext*loop_r*bb_0*dt;        
     #forward and backward have same general linear operator
     L½prop .= exp.(FFT_Lin(Int(it)) .* dt/2);
     #but need to add in the Bragg term differently for each mode
-    A_L½propf .= ifft_plan* (fft_plan*(A0f) .* L½prop.+1im*Bragg_R/2*fft_plan(bb_0).*dt/2);
-    A_L½propb .= ifft_plan* (fft_plan*(A0f) .* L½prop.+1im*Bragg_R/2*fft_plan(ff_0).*dt/2);
+    A_L½propf .= ifft_plan* (fft_plan*(A0f) .* L½prop .+ 1im*Bragg_R/2*fft_plan(bb_0).*dt/2);
+    A_L½propb .= ifft_plan* (fft_plan*(A0f) .* L½prop .+ 1im*Bragg_R/2*fft_plan(ff_0).*dt/2);
     #here nonlinear operators are different for forward and backward
     NL½prop_0f .= NLf(A0f, A0b, it);
     NL½prop_0b .= NLb(A0f, A0b, it);
@@ -415,8 +415,8 @@ function SSFM½step(A0f, A0b, it, param)
         NLpropf .= (NL½prop_0f .+ NL½prop_1f) .* dt/2;
         NLpropb .= (NL½prop_0b .+ NL½prop_1b) .* dt/2;
         #finsh the full linear step for both directions (need to add in the bragg term half step for each again)
-        Apropf .= ifft_plan*( fft_plan*(A_L½propf .* exp.(NLpropf) ) .* L½propf + 1im*Bragg_R/2*fft_plan(bb_0).*dt/2)
-        Apropb .= ifft_plan*( fft_plan*(A_L½propb .* exp.(NLpropb) ) .* L½propb + 1im*Bragg_R/2*fft_plan(ff_0).*dt/2)
+        Apropf .= ifft_plan*( fft_plan*(A_L½propf .* exp.(NLpropf) ) .* L½propf .+ 1im*Bragg_R/2*fft_plan(bb_0).*dt/2)
+        Apropb .= ifft_plan*( fft_plan*(A_L½propb .* exp.(NLpropb) ) .* L½propb .+ 1im*Bragg_R/2*fft_plan(ff_0).*dt/2)
         # --- check if we concerge or not ---
         #taking the average of error in both directions
         err = LinearAlgebra.norm(Apropf-A½propf,2)/LinearAlgebra.norm(A½propf,2)/2+LinearAlgebra.norm(Apropb-A½propb,2)/LinearAlgebra.norm(A½propb,2)/2
@@ -463,6 +463,7 @@ function MainSolver(Nt, S, u0f,u0b)
     param["probe_pbar"] = parse(Float64,"0.01");
     param["cnt_pbar"] = 0;
     param["probe"] = 0;
+    print("starting")
 
     loops = collect(1:1:Nt)
 
@@ -472,9 +473,11 @@ function MainSolver(Nt, S, u0f,u0b)
         u0f,u0b = SSFM½step(u0f,u0b, it, param)
         #total field is the sum of the forward and backward fields
         u0=u0f+u0b
+        print(u0)
         # -- Update the Progress bar --
         param = ProgressBar_CallBack(Int(it), Nt, S, u0, param)
         # -- Save the Data in the dict --
+        print("Progress Good")
         param = SaveStatus_CallBack(Int(it), Nt, S, u0, param)
     end
     SaveData(S, num_probe, ω0, dω)
@@ -486,4 +489,6 @@ end
 logfile =  open(tmp_dir * "log.log" ,"w")
 write(logfile,string(Int(round(0))) * "\n")
 close(logfile)
+println("start?")
 MainSolver(Nt, S, u0f,u0b)
+println("Finished")

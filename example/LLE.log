@@ -1,0 +1,111 @@
+
+---------------------------------------------------------------------------
+[ 2024-01-22 16:25:26 - __init__ ] New LLE
+[ 2024-01-22 16:25:27 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./RW1000_H430.csv
+	f_pmp: 283.000 THz
+[ 2024-01-22 16:25:34 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 23.00 µm
+		Qi = 1.00 M
+		Qc = 1.00 M
+		γ = 3.20 
+		Bragg Shift = 3000.00 MHz
+		loop_ref_real = -0.89 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 140.00 mW
+		f_pmp[0] = 282.65 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-220.00,220.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-22 16:25:34 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpl9_okk1iParamLLEJulia.h5
+[ 2024-01-22 16:25:34 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-22 16:25:34 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-22 16:25:40 - LLEsovler.SolveTemporal ] Simulation Time 00h:00min:04.0s
+
+---------------------------------------------------------------------------
+[ 2024-01-22 16:28:57 - __init__ ] New LLE
+[ 2024-01-22 16:28:58 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./RW1000_H430.csv
+	f_pmp: 283.000 THz
+[ 2024-01-22 16:29:05 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 23.00 µm
+		Qi = 1.00 M
+		Qc = 1.00 M
+		γ = 3.20 
+		Bragg Shift = 3000.00 MHz
+		loop_ref_real = -0.89 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 140.00 mW
+		f_pmp[0] = 282.65 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-220.00,220.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-22 16:29:05 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmphj3z0m2sParamLLEJulia.h5
+[ 2024-01-22 16:29:17 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 23.00 µm
+		Qi = 1.00 M
+		Qc = 1.00 M
+		γ = 3.20 
+		Bragg Shift = 3000.00 MHz
+		loop_ref_real = -0.89 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 140.00 mW
+		f_pmp[0] = 282.65 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-220.00,220.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-22 16:29:17 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmphj3z0m2sParamLLEJulia.h5
+[ 2024-01-22 16:29:17 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-22 16:29:17 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-22 16:29:23 - LLEsovler.SolveTemporal ] Simulation Time 00h:00min:04.0s
+
+---------------------------------------------------------------------------
+[ 2024-01-22 16:30:46 - __init__ ] New LLE
+[ 2024-01-22 16:30:49 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./RW1000_H430.csv
+	f_pmp: 283.000 THz
+[ 2024-01-22 16:31:02 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 23.00 µm
+		Qi = 1.00 M
+		Qc = 1.00 M
+		γ = 3.20 
+		Bragg Shift = 0.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 140.00 mW
+		f_pmp[0] = 282.65 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-220.00,220.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-22 16:31:02 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmphj3z0m2sParamLLEJulia.h5
+[ 2024-01-22 16:31:02 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-22 16:31:02 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-22 16:31:08 - LLEsovler.SolveTemporal ] Simulation Time 00h:00min:04.0s
