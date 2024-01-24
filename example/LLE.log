@@ -3709,3 +3709,1251 @@
 [ 2024-01-23 02:59:26 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
 [ 2024-01-23 03:02:08 - LLEsovler.SolveTemporal ] Simulation Time 00h:02min:39.3s
 [ 2024-01-23 03:02:11 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpq_ghhb3fResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 16:19:22 - __init__ ] New LLE
+[ 2024-01-23 16:19:32 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 283.000 THz
+
+---------------------------------------------------------------------------
+[ 2024-01-23 16:22:04 - __init__ ] New LLE
+
+---------------------------------------------------------------------------
+[ 2024-01-23 16:22:38 - __init__ ] New LLE
+[ 2024-01-23 16:22:39 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 283.000 THz
+
+---------------------------------------------------------------------------
+[ 2024-01-23 16:56:29 - __init__ ] New LLE
+[ 2024-01-23 16:56:31 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 283.000 THz
+
+---------------------------------------------------------------------------
+[ 2024-01-23 16:57:55 - __init__ ] New LLE
+[ 2024-01-23 16:57:55 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+
+---------------------------------------------------------------------------
+[ 2024-01-23 16:59:50 - __init__ ] New LLE
+[ 2024-01-23 16:59:51 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:00:43 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 2600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 140.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:00:43 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp0qsanvk1ParamLLEJulia.h5
+[ 2024-01-23 17:00:43 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:00:43 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 17:02:58 - LLEsovler.SolveTemporal ] Simulation Time 00h:02min:13.4s
+[ 2024-01-23 17:03:01 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp0qsanvk1ResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 17:08:40 - __init__ ] New LLE
+[ 2024-01-23 17:08:41 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:08:53 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 140.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:08:53 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp0qsanvk1ParamLLEJulia.h5
+[ 2024-01-23 17:08:53 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:08:53 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 17:11:19 - LLEsovler.SolveTemporal ] Simulation Time 00h:02min:23.0s
+[ 2024-01-23 17:11:22 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp0qsanvk1ResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 17:17:47 - __init__ ] New LLE
+[ 2024-01-23 17:17:47 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:17:49 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 140.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:17:49 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpnr1oholyParamLLEJulia.h5
+[ 2024-01-23 17:17:49 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:17:49 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 17:20:18 - LLEsovler.SolveTemporal ] Simulation Time 00h:02min:27.5s
+[ 2024-01-23 17:20:21 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpnr1oholyResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 17:20:59 - __init__ ] New LLE
+[ 2024-01-23 17:20:59 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:21:01 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 140.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:21:01 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmprykqd9zeParamLLEJulia.h5
+[ 2024-01-23 17:21:01 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:21:01 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 17:23:28 - LLEsovler.SolveTemporal ] Simulation Time 00h:02min:25.3s
+[ 2024-01-23 17:23:31 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmprykqd9zeResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 17:30:23 - __init__ ] New LLE
+[ 2024-01-23 17:30:23 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:30:24 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 140.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:30:24 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpl1zazbpiParamLLEJulia.h5
+[ 2024-01-23 17:30:24 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:30:24 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 17:33:08 - LLEsovler.SolveTemporal ] Simulation Time 00h:02min:41.9s
+[ 2024-01-23 17:33:11 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpl1zazbpiResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 17:37:44 - __init__ ] New LLE
+[ 2024-01-23 17:37:44 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:37:46 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 140.00 mW
+		f_pmp[0] = 193.42 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:37:46 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp2z9akq55ParamLLEJulia.h5
+[ 2024-01-23 17:37:46 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:37:46 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 17:40:32 - LLEsovler.SolveTemporal ] Simulation Time 00h:02min:43.5s
+[ 2024-01-23 17:40:35 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp2z9akq55ResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 17:44:18 - __init__ ] New LLE
+[ 2024-01-23 17:44:19 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:44:27 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:44:27 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpm4_2atzhParamLLEJulia.h5
+[ 2024-01-23 17:44:27 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:44:27 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 17:47:04 - LLEsovler.SolveTemporal ] Simulation Time 00h:02min:35.3s
+[ 2024-01-23 17:47:07 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpm4_2atzhResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 17:49:39 - __init__ ] New LLE
+[ 2024-01-23 17:49:39 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:49:41 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:49:41 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp2b8qtpvuParamLLEJulia.h5
+[ 2024-01-23 17:49:41 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:49:41 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 17:52:19 - LLEsovler.SolveTemporal ] Simulation Time 00h:02min:35.5s
+[ 2024-01-23 17:52:22 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp2b8qtpvuResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 17:55:33 - __init__ ] New LLE
+[ 2024-01-23 17:55:33 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:55:35 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:55:35 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp8s8nq_usParamLLEJulia.h5
+[ 2024-01-23 17:55:35 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:55:35 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 17:55:44 - LLEsovler.SolveTemporal ] Simulation Time 00h:00min:07.4s
+
+---------------------------------------------------------------------------
+[ 2024-01-23 17:57:03 - __init__ ] New LLE
+[ 2024-01-23 17:57:03 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:57:05 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:57:05 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp622wubewParamLLEJulia.h5
+[ 2024-01-23 17:57:05 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:57:05 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 17:57:14 - LLEsovler.SolveTemporal ] Simulation Time 00h:00min:07.4s
+
+---------------------------------------------------------------------------
+[ 2024-01-23 17:57:30 - __init__ ] New LLE
+[ 2024-01-23 17:57:30 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:57:32 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:57:32 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpsf72c7e2ParamLLEJulia.h5
+[ 2024-01-23 17:57:32 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:57:32 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+
+---------------------------------------------------------------------------
+[ 2024-01-23 17:59:25 - __init__ ] New LLE
+[ 2024-01-23 17:59:25 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 17:59:26 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 17:59:26 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp2cdwzep9ParamLLEJulia.h5
+[ 2024-01-23 17:59:26 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 17:59:26 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+
+---------------------------------------------------------------------------
+[ 2024-01-23 18:00:40 - __init__ ] New LLE
+[ 2024-01-23 18:00:40 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 18:00:42 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 18:00:42 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp8bnlloarParamLLEJulia.h5
+[ 2024-01-23 18:00:42 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 18:00:42 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 18:03:14 - LLEsovler.SolveTemporal ] Simulation Time 00h:02min:30.5s
+[ 2024-01-23 18:03:18 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp8bnlloarResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 18:10:18 - __init__ ] New LLE
+[ 2024-01-23 18:10:18 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 18:10:20 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 18:10:20 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp4qib2_nrParamLLEJulia.h5
+[ 2024-01-23 18:10:20 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 18:10:20 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 18:10:28 - LLEsovler.SolveTemporal ] Simulation Time 00h:00min:05.6s
+
+---------------------------------------------------------------------------
+[ 2024-01-23 18:11:04 - __init__ ] New LLE
+[ 2024-01-23 18:11:04 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 18:11:06 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 18:11:06 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmprtds8od5ParamLLEJulia.h5
+[ 2024-01-23 18:11:06 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 18:11:06 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+
+---------------------------------------------------------------------------
+[ 2024-01-23 18:12:34 - __init__ ] New LLE
+[ 2024-01-23 18:12:34 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 18:12:35 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-100.00,100.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 18:12:35 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpiw_rarocParamLLEJulia.h5
+[ 2024-01-23 18:12:35 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 18:12:35 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+
+---------------------------------------------------------------------------
+[ 2024-01-23 18:14:44 - __init__ ] New LLE
+[ 2024-01-23 18:14:44 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 18:14:46 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-30.00,30.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 18:14:46 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpbjjo_tn6ParamLLEJulia.h5
+[ 2024-01-23 18:14:46 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 18:14:46 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+
+---------------------------------------------------------------------------
+[ 2024-01-23 18:18:00 - __init__ ] New LLE
+[ 2024-01-23 18:18:00 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 18:18:02 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-30.00,30.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 18:18:02 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp5w2hcpwrParamLLEJulia.h5
+[ 2024-01-23 18:18:02 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 18:18:02 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+
+---------------------------------------------------------------------------
+[ 2024-01-23 18:19:06 - __init__ ] New LLE
+[ 2024-01-23 18:19:06 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 18:19:08 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-5.00,5.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 18:19:08 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp7l6cpo8mParamLLEJulia.h5
+[ 2024-01-23 18:19:08 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 18:19:08 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+
+---------------------------------------------------------------------------
+[ 2024-01-23 18:24:47 - __init__ ] New LLE
+[ 2024-01-23 18:24:47 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 18:24:49 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-5.00,5.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 18:24:49 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpw2cwphepParamLLEJulia.h5
+[ 2024-01-23 18:24:49 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 18:24:49 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+
+---------------------------------------------------------------------------
+[ 2024-01-23 18:27:01 - __init__ ] New LLE
+[ 2024-01-23 18:27:01 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 18:27:03 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-5.00,5.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 18:27:03 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpgeja_y6fParamLLEJulia.h5
+[ 2024-01-23 18:27:03 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 18:27:03 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 18:27:36 - LLEsovler.SolveTemporal ] Simulation Time 00h:00min:30.8s
+[ 2024-01-23 18:27:39 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpgeja_y6fResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:04:40 - __init__ ] New LLE
+[ 2024-01-23 19:04:40 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:04:42 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-5.00,5.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:04:42 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpr7_tx84wParamLLEJulia.h5
+[ 2024-01-23 19:04:42 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:04:42 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:05:15 - LLEsovler.SolveTemporal ] Simulation Time 00h:00min:31.5s
+[ 2024-01-23 19:05:18 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpr7_tx84wResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:06:26 - __init__ ] New LLE
+[ 2024-01-23 19:06:26 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:06:28 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-5.00,5.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:06:28 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpc7uth2jiParamLLEJulia.h5
+[ 2024-01-23 19:06:28 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:06:28 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:07:05 - LLEsovler.SolveTemporal ] Simulation Time 00h:00min:34.8s
+[ 2024-01-23 19:07:08 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpc7uth2jiResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:07:36 - __init__ ] New LLE
+[ 2024-01-23 19:07:36 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:07:38 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:07:38 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpono9gxlmParamLLEJulia.h5
+[ 2024-01-23 19:07:38 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:07:38 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:09:08 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:28.8s
+[ 2024-01-23 19:09:11 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpono9gxlmResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:10:11 - __init__ ] New LLE
+[ 2024-01-23 19:10:11 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:10:12 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 9600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:10:12 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpwk31c_j7ParamLLEJulia.h5
+[ 2024-01-23 19:10:12 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:10:12 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:11:44 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:29.8s
+[ 2024-01-23 19:11:47 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpwk31c_j7ResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:13:38 - __init__ ] New LLE
+[ 2024-01-23 19:13:38 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:13:40 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 20600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:13:40 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpcopeqx3wParamLLEJulia.h5
+[ 2024-01-23 19:13:40 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:13:40 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:15:02 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:19.8s
+[ 2024-01-23 19:15:05 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpcopeqx3wResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:16:00 - __init__ ] New LLE
+[ 2024-01-23 19:16:00 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:16:02 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 20600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:16:02 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpjj4uyby1ParamLLEJulia.h5
+[ 2024-01-23 19:16:02 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:16:02 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:17:25 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:21.4s
+[ 2024-01-23 19:17:28 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpjj4uyby1ResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:17:57 - __init__ ] New LLE
+[ 2024-01-23 19:17:57 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:17:59 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 20600.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:17:59 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpbhs5pfp1ParamLLEJulia.h5
+[ 2024-01-23 19:17:59 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:17:59 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:19:18 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:17.6s
+[ 2024-01-23 19:19:21 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpbhs5pfp1ResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:20:00 - __init__ ] New LLE
+[ 2024-01-23 19:20:00 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:20:02 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 0.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:20:02 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp2nt2rsheParamLLEJulia.h5
+[ 2024-01-23 19:20:02 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:20:02 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:21:22 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:17.4s
+[ 2024-01-23 19:21:25 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp2nt2rsheResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:21:57 - __init__ ] New LLE
+[ 2024-01-23 19:21:57 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:21:59 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 0.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:21:59 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp3d3xqrpbParamLLEJulia.h5
+[ 2024-01-23 19:21:59 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:21:59 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:23:17 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:15.4s
+[ 2024-01-23 19:23:20 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp3d3xqrpbResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:24:02 - __init__ ] New LLE
+[ 2024-01-23 19:24:02 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:24:03 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 0.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:24:03 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp35it8gfnParamLLEJulia.h5
+[ 2024-01-23 19:24:03 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:24:03 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:25:29 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:23.8s
+[ 2024-01-23 19:25:32 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp35it8gfnResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:26:21 - __init__ ] New LLE
+[ 2024-01-23 19:26:21 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:26:22 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 10.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:26:22 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp7ptod4p3ParamLLEJulia.h5
+[ 2024-01-23 19:26:22 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:26:22 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:27:50 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:25.5s
+[ 2024-01-23 19:27:53 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp7ptod4p3ResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:30:02 - __init__ ] New LLE
+[ 2024-01-23 19:30:02 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:30:04 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 1.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:30:04 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp3zh8sakvParamLLEJulia.h5
+[ 2024-01-23 19:30:04 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:30:04 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:31:24 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:17.4s
+[ 2024-01-23 19:31:27 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp3zh8sakvResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:43:40 - __init__ ] New LLE
+[ 2024-01-23 19:43:40 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:43:42 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 1.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:43:42 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp9xdqhgc5ParamLLEJulia.h5
+[ 2024-01-23 19:43:42 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:43:42 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:45:22 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:38.3s
+[ 2024-01-23 19:45:25 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp9xdqhgc5ResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:46:18 - __init__ ] New LLE
+[ 2024-01-23 19:46:18 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:46:20 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 1.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:46:20 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpjx0d3rvtParamLLEJulia.h5
+[ 2024-01-23 19:46:20 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:46:20 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:47:54 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:32.5s
+[ 2024-01-23 19:47:57 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpjx0d3rvtResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:49:12 - __init__ ] New LLE
+[ 2024-01-23 19:49:12 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:49:14 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 1.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-25.00,25.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:49:14 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpnmfp7bfeParamLLEJulia.h5
+[ 2024-01-23 19:49:14 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:49:14 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:50:09 - LLEsovler.SolveTemporal ] Simulation Time 00h:00min:53.5s
+[ 2024-01-23 19:50:12 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpnmfp7bfeResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 19:56:54 - __init__ ] New LLE
+[ 2024-01-23 19:56:54 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 19:56:56 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 1.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 19:56:56 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpz549qqnzParamLLEJulia.h5
+[ 2024-01-23 19:56:56 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 19:56:56 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 19:58:23 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:25.6s
+[ 2024-01-23 19:58:26 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpz549qqnzResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 20:01:49 - __init__ ] New LLE
+[ 2024-01-23 20:01:49 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 20:01:51 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 1.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 20:01:51 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpvvb72l91ParamLLEJulia.h5
+[ 2024-01-23 20:01:51 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 20:01:51 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 20:03:24 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:31.5s
+[ 2024-01-23 20:03:27 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmpvvb72l91ResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 20:05:49 - __init__ ] New LLE
+[ 2024-01-23 20:05:49 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 20:05:50 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 1.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 20:05:50 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp44xtk4itParamLLEJulia.h5
+[ 2024-01-23 20:05:50 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 20:05:50 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 20:07:26 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:33.9s
+[ 2024-01-23 20:07:29 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp44xtk4itResultsJulia.h5
+
+---------------------------------------------------------------------------
+[ 2024-01-23 20:11:38 - __init__ ] New LLE
+[ 2024-01-23 20:11:38 - LLEsovler.Analyze ] Analyzing dispersion file
+	Filename: ./Tantala_test_PhCr_Disp.csv
+	f_pmp: 193.414 THz
+[ 2024-01-23 20:11:40 - LLEsovler.Setup ] -- Solving standard LLE --
+	Simulation Parameters
+		R = 22.50 µm
+		Qi = 2.00 M
+		Qc = 2.00 M
+		γ = 1.82 
+		Bragg Shift = 1.00 MHz
+		loop_ref_real = -0.00 
+		loop_ref_imag = 0.00 
+	Simulation Parameters
+		Pin[0] = 42.00 mW
+		f_pmp[0] = 193.41 THz
+		Tscan = 0.70 x1e6 Round Trip
+		μ_sim = [-50.00,50.00] 
+		δω_init = 1.00 x2π GHz
+		δω_end = -6.50 x2π GHz
+		μ_fit = [None,None] 
+		δω_stop = -6.50 x2π GHz
+		ind_pump_sweep[0] = 0.00 
+
+[ 2024-01-23 20:11:40 - LLEsovler.Setup ] Saving parameters in: /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp4r6oxm00ParamLLEJulia.h5
+[ 2024-01-23 20:11:40 - LLEsovler.SolveTemporal ] Solving Temporal LLE with Julia....
+[ 2024-01-23 20:11:40 - LLEsovler.SolveTemporal ] tol = 0.001 -- maxiter = 6 step_factpr = 0.1
+[ 2024-01-23 20:13:13 - LLEsovler.SolveTemporal ] Simulation Time 00h:01min:30.5s
+[ 2024-01-23 20:13:16 - LLEsovler.RetrieveData ] Retrieving results from Julia in /var/folders/k2/n79h9ytx5rq114j_k4jrxv5w0000gn/T/tmp4r6oxm00ResultsJulia.h5

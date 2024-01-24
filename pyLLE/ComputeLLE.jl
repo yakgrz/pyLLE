@@ -701,13 +701,17 @@ for ii in collect(1:length(fpmp))
     Ein[ii][μ0+ind_pmp[ii]] = sqrt(Ppmp[ii])*length(μ)
     Ain[ii] = ifft_plan*(FFTW.fftshift(Ein[ii])) .* exp(-1im.*φpmp[ii])
 end
+println("Ein")
+println(Ein)
+println("Ain")
+println(Ain)
 # -- Initial State --
 # ---------------------------------------------------------------
 u0 = 1im * zeros(length(μ),1)
-u0[:, 1] = DKSinit
+#u0[:, 1] = DKSinit
 
 v0 = 1im * zeros(length(μ),1)
-v0[:, 1] = DKSinit
+#v0[:, 1] = DKSinit
 
 # -- Output Dict --
 # ---------------------------------------------------------------
@@ -826,6 +830,9 @@ Aout = 1im .*zeros(length(μ),1)
 retNL = 1im .*zeros(length(μ),1)
 retcpl = 1im .*zeros(length(μ),1)
 
+println(μ0)
+print("pump ind")
+println(Int(ind_pmp[1]))
 function SSFM½step(A0, B0, it, param)
     # ----------------------------------------------------------------------------------------
     # Standard split step fourier method
@@ -882,9 +889,11 @@ function SSFM½step(A0, B0, it, param)
     #forward and backward direction
     #center index is given by μ0 = Int(1 + (length(μ)-1)/2) 
     bb_0 = 1im*zeros(length(μ),1)
-    bb_0[μ0,1] = B0[μ0,1]
+    bb_0[μ0+Int(ind_pmp[1])-1,1] = B0[μ0+Int(ind_pmp[1]),1]
+    #bb_0=ifft_plan* (FFTW.fftshift(bb_0))
     ff_0 = 1im*zeros(length(μ),1)
-    ff_0[μ0,1]= A0[μ0,1]
+    ff_0[μ0+Int(ind_pmp[1])-1,1] = A0[μ0+Int(ind_pmp[1])-1,1]
+    #ff_0=ifft_plan* (FFTW.fftshift(ff_0))
 
     A0 = A0 .+ Fdrive(Int(it)) .*sqrt(κext) .* dt .+ sqrt(2/α) .* κext .* loop_r .* bb_0 .* dt;        
     
@@ -894,9 +903,11 @@ function SSFM½step(A0, B0, it, param)
     A_L½propb .= ifft_plan* (fft_plan*(B0) .* L½prop) .+ ifft_plan*(fft_plan*(1im .* Bragg_R/2 .* ff_0.* dt/2));
     
     bb_1 = 1im*zeros(length(μ),1)
-    bb_1[μ0,1] = A_L½propb[μ0,1]
+    bb_1[μ0+Int(ind_pmp[1])-1,1] = A_L½propb[μ0+Int(ind_pmp[1])-1,1]
+    #bb_1=ifft_plan* (FFTW.fftshift(bb_0))
     ff_1 = 1im*zeros(length(μ),1)
-    ff_1[μ0,1]= A_L½propf[μ0,1]
+    ff_1[μ0+Int(ind_pmp[1])-1,1]= A_L½propf[μ0+Int(ind_pmp[1])-1,1]
+    #ff_1=ifft_plan* (FFTW.fftshift(ff_0))
 
     NL½prop_0f .= NLf(A0, B0, it);
     NL½prop_0b .= NLb(A0, B0, it);
@@ -919,7 +930,7 @@ function SSFM½step(A0, B0, it, param)
         NLpropb .= (NL½prop_0b .+ NL½prop_1b) .* dt/2;
         Apropf .= ifft_plan*( fft_plan*(A_L½propf .* exp.(NLpropf) ) .* L½prop ).+ ifft_plan*(fft_plan*(1im .* Bragg_R/2 .* bb_1.* dt/2))
         Apropb .= ifft_plan*( fft_plan*(A_L½propb .* exp.(NLpropb) ) .* L½prop ).+ ifft_plan*(fft_plan*(1im .* Bragg_R/2 .* ff_1.* dt/2))
-        # --- check if we concerge or not ---
+        # --- check if we converge or not ---
         err_f = LinearAlgebra.norm(Apropf-A½propf,2)/LinearAlgebra.norm(A½propf,2)
         #can't seem to converge with the below def, probs due to A1/2propb being 0 initially?
         #err_b = LinearAlgebra.norm(Apropb-A½propb,2)/LinearAlgebra.norm(A½propb,2)

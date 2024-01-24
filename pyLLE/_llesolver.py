@@ -255,7 +255,7 @@ class LLEsolver(object):
         - gamma <float>: Non linear index of the material
         - dispfile <str> : str pointing to a .csv file where the azimuthal mode orders and corresponding resonances are saved
         - Bragg <float> :  coupling constant between the forward and backward modes via Bragg PhCr
-        - loop_ref <complex>: complex reflection coefficiency describing isolator and loop mirror reflector
+        - loop_ref <complex>: complex reflection coefficienct describing isolator and loop mirror reflector
             -loop_ref_real <float>: real part of the above for passing to Julia
             -loop_ref_imag <float>: imaginary part of the above for passing to Julia
     **sim <dict>**
