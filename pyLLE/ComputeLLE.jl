@@ -889,17 +889,17 @@ function SSFM½step(A0, B0, it, param)
     #forward and backward direction
     #center index is given by μ0 = Int(1 + (length(μ)-1)/2) 
     bb_0 = 1im*zeros(length(μ),1)
-    bb_0[μ0+Int(ind_pmp[1])-1,1] = B0[μ0+Int(ind_pmp[1]),1]
+    bb_0[μ0+Int(ind_pmp[1])-1,1] = B0[μ0+Int(ind_pmp[1])-1,1]
     #bb_0=ifft_plan* (FFTW.fftshift(bb_0))
     ff_0 = 1im*zeros(length(μ),1)
     ff_0[μ0+Int(ind_pmp[1])-1,1] = A0[μ0+Int(ind_pmp[1])-1,1]
     #ff_0=ifft_plan* (FFTW.fftshift(ff_0))
 
-    A0 = A0 .+ Fdrive(Int(it)) .*sqrt(κext) .* dt .+ sqrt(2/α) .* κext .* loop_r .* bb_0 .* dt;        
+    A0 = A0 .+ Fdrive(Int(it)) .*sqrt(κext) .* dt# .+ sqrt(2/α) .* κext .* loop_r .* bb_0 .* dt;        
     
     L½prop .= exp.(FFT_Lin(Int(it)) .* dt/2);
 
-    A_L½propf .= ifft_plan* (fft_plan*(A0) .* L½prop) .+ ifft_plan*(fft_plan*(1im .* Bragg_R/2 .* bb_0.* dt/2));
+    A_L½propf .= ifft_plan* (fft_plan*(A0) .* L½prop) .+ ifft_plan*(fft_plan*(1im .* Bragg_R/2 .* bb_0.* dt/2)).+ ifft_plan*(fft_plan*(sqrt(2/α) .* κext .* loop_r .* bb_0 .* dt/2));;
     A_L½propb .= ifft_plan* (fft_plan*(B0) .* L½prop) .+ ifft_plan*(fft_plan*(1im .* Bragg_R/2 .* ff_0.* dt/2));
     
     bb_1 = 1im*zeros(length(μ),1)
@@ -928,8 +928,8 @@ function SSFM½step(A0, B0, it, param)
         NL½prop_1b .= NLf(A½propf, A½propb, it);
         NLpropf .= (NL½prop_0f .+ NL½prop_1f) .* dt/2;
         NLpropb .= (NL½prop_0b .+ NL½prop_1b) .* dt/2;
-        Apropf .= ifft_plan*( fft_plan*(A_L½propf .* exp.(NLpropf) ) .* L½prop ).+ ifft_plan*(fft_plan*(1im .* Bragg_R/2 .* bb_1.* dt/2))
-        Apropb .= ifft_plan*( fft_plan*(A_L½propb .* exp.(NLpropb) ) .* L½prop ).+ ifft_plan*(fft_plan*(1im .* Bragg_R/2 .* ff_1.* dt/2))
+        Apropf .= ifft_plan*( fft_plan*(A_L½propf .* exp.(NLpropf) ) .* L½prop ).+ ifft_plan*(fft_plan*(1im .* Bragg_R/2 .* bb_1.* dt/2)) .+ ifft_plan*(fft_plan*(sqrt(2/α) .* κext .* loop_r .* bb_1 .* dt/2));
+        Apropb .= ifft_plan*( fft_plan*(A_L½propb .* exp.(NLpropb) ) .* L½prop ).+ ifft_plan*(fft_plan*(1im .* Bragg_R/2 .* ff_1.* dt/2));
         # --- check if we converge or not ---
         err_f = LinearAlgebra.norm(Apropf-A½propf,2)/LinearAlgebra.norm(A½propf,2)
         #can't seem to converge with the below def, probs due to A1/2propb being 0 initially?
@@ -986,9 +986,9 @@ function MainSolver(Nt, S, u0, v0)
         u0, v0 = SSFM½step(u0, v0, it, param)
         ut = u0 .+ v0
         # -- Update the Progress bar --
-        param = ProgressBar_CallBack(Int(it), Nt, S, ut, param)
+        param = ProgressBar_CallBack(Int(it), Nt, S, u0, param)
         # -- Save the Data in the dict --
-        param = SaveStatus_CallBack(Int(it), Nt, S, ut, param)
+        param = SaveStatus_CallBack(Int(it), Nt, S, u0, param)
     end
     SaveData(S, num_probe, ω0, dω)
 
