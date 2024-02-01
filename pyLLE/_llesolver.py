@@ -255,9 +255,11 @@ class LLEsolver(object):
         - gamma <float>: Non linear index of the material
         - dispfile <str> : str pointing to a .csv file where the azimuthal mode orders and corresponding resonances are saved
         - Bragg <float> :  coupling constant between the forward and backward modes via Bragg PhCr
+        - Bragg Modes <array><Int>: Locations of modes that are split by Bragg mirror (relative to center mode)
         - loop_ref <complex>: complex reflection coefficienct describing isolator and loop mirror reflector
             -loop_ref_real <float>: real part of the above for passing to Julia
             -loop_ref_imag <float>: imaginary part of the above for passing to Julia
+        - Loop Modes <array><Int>: Locations of modes that are reflected by external mirror (relative to center mode)
     **sim <dict>**
 
         - Tscan <float>: length of the simulation (in unit of round trip)
@@ -300,7 +302,7 @@ class LLEsolver(object):
         assert "Tscan" in self._sim.keys(), "Please provide Tscan"
         assert "dispfile" in self._res.keys(), "Please provide dispfile"
         assert "Bragg" in self._res.keys(), "Please provide Bragg reflection constant"
-
+        assert "Bragg_Modes" in self._res.keys(), "Please provide Bragg refelcted Mode numbers (relative to simulation center)"
         if not "D1_manual" in self._sim.keys():
             self._sim["D1_manual"] = None
 
@@ -503,8 +505,10 @@ class LLEsolver(object):
             "γ": self._res["gamma"],
             "dispfile": self._res["dispfile"],
             "Bragg":self._res["Bragg"],
+            "Bragg_Modes":self._res["Bragg_Modes"],
             "loop_ref_real":np.real(self._res["loop_ref_real"]),
             "loop_ref_imag":np.imag(self._res["loop_ref_imag"]),
+            "Loop_Modes": self._res["Loop_Modes"],
         }
 
         sim = {
@@ -591,8 +595,10 @@ class LLEsolver(object):
                         "Qi": ("Qi", 1e-6, "M"),
                         "gamma": ("\u03B3", 1, ""),
                         "Bragg": ("Bragg", 1e-6,"MHz"),
+                        #"Bragg_Modes": ("BraggSplitModes", 1, ""),
                         "loop_ref_real":("loop_ref_real",1,""),
                         "loop_ref_imag":("loop_ref_imag",1,""),
+                        #"Loop_Modes": ("LoopRefModes", 1, ""),
                     }
                 else:
                     dic_res = {
@@ -601,8 +607,10 @@ class LLEsolver(object):
                         "Qc": ("Qc", 1e-6, "M"),
                         "gamma": ("\u03B3", 1, ""),
                         "Bragg": ("Bragg Shift", 1e-6,"MHz"),
+                        #"Bragg_Modes": ("BraggSplitModes", 1, ""),
                         "loop_ref_real":("loop_ref_real",1,""),
                         "loop_ref_imag":("loop_ref_imag",1,""),
+                        #"Loop_Modes": ("LoopRefModes", 1, ""),
                     }
             except:
                 dic_res = {
@@ -611,8 +619,10 @@ class LLEsolver(object):
                     "Qc": ("Qc", 1e-6, "M"),
                     "gamma": ("\u03B3", 1, ""),
                     "Bragg": ("Bragg Shift", 1e-6,"MHz"),
+                    #"Bragg_Modes": ("BraggSplitModes", 1, ""),
                     "loop_ref_real":("loop_ref_real",1,""),
                     "loop_ref_imag":("loop_ref_imag",1,""),
+                    #"Loop_Modes": ("LoopRefModes", 1, ""),
                 }
 
             return dic_sim, dic_res
@@ -736,11 +746,20 @@ class LLEsolver(object):
                     if type(it) is str:
                         it = np.string_(it)
                     if type(it) is list:
+                        if key =="Bragg_Modes":
+                            print("HAHAHA")
+                            it=self._res["Bragg_Modes"]
+                            print(it)
+                        if key =="Loop_Modes":
+                            it=self._res["Loop_Modes"]
                         if None in it:
                             it = [0 if iitt is None else iitt for iitt in it]
                     else:
                         if it == None:
                             it = 0
+                    #if key =="Bragg_Modes" or key=="Loop_Modes": 
+                    #    print(key)
+                    #    print(it)
                     h5f.create_dataset("res/{}".format(key), data=[it])
             h5f.close()
 
@@ -1417,6 +1436,19 @@ class LLEsolver(object):
             res_table.add_row(
                 ["Bragg", "{:.3f}".format(self._res["Bragg"] ), "Mode shift (Hz)"]
             )
+        if "Bragg_Modes" in self._res:
+            Braggs = ["{:.3f}".format(ii ) for ii in self._dic["Bragg_Modes"]]
+            Braggs = "[" + ", ".join(Braggs) + "]"
+            res_table.add_row(
+                ["Bragg Modes", Braggs, "Mode locations"]
+            )
+        if "Loop_Modes" in self._res:
+            Loops = ["{:.3f}".format(ii ) for ii in self._dic["Loop_Modes"]]
+            Loops = "[" + ", ".join(Loops) + "]"
+            res_table.add_row(
+                ["Loop Modes", Loops, "Mode locations"]
+            )
+
         to_print += res_table.get_string()
         to_print += "\n"
         to_print += "\n"
@@ -1496,9 +1528,19 @@ class _dic2struct:
         table.add_row(
             ["Bragg", self._dic["Bragg"]/1e6, "Bragg Shift (MHz)", ""]
         )
+        Braggs = ["{:.3f}".format(int(ii) ) for ii in self._dic["Bragg_Modes"]]
+        Braggs = "[" + ", ".join(Braggs) + "]"
+        table.add_row(
+                ["Bragg Modes", Braggs , "Mode", "locations"]
+            )
         table.add_row(
             ["Loop Reflector", self._dic["loop_ref_real"]+1j*self._dic["loop_ref_imag"], "reflection constant", ""]
         )
+        Loops = ["{:.3f}".format(int(ii) ) for ii in self._dic["Loop_Modes"]]
+        Loops = "[" + ", ".join(Loops) + "]"
+        table.add_row(
+                ["Loop Modes",Loops, "Mode", "locations"]
+            )
         table.vrules = False
         table.header = True
         table.align = "l"
