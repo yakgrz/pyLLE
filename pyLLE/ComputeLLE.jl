@@ -126,7 +126,7 @@ Dint = sim["Dint"]
 #i am unsure how trustworthy it is to add 1 down here 
 ind_pmp = [ii for ii in sim["ind_pmp"]] #because of 0 and 1 index start difference between Julia
 #update: kinda sketchy, saw OPO at a mode I didn't expect
-#ind_pmp = [ii +1 for ii in sim["ind_pmp"]] #because of 0 and 1 index start difference between Julia
+#ind_pmp = [ii+1 for ii in sim["ind_pmp"]] #because of 0 and 1 index start difference between Julia
 
 μ_sim = sim["mu_sim_center"]
 μ = collect(μ_sim[1]:μ_sim[2])
@@ -576,9 +576,9 @@ function MainSolver(Nt, S, u0, v0)
         u0, v0 = SSFM½step(u0, v0, it, param)
         ut = u0 .+ v0
         # -- Update the Progress bar --
-        param = ProgressBar_CallBack(Int(it), Nt, S, u0, param)
+        param = ProgressBar_CallBack(Int(it), Nt, S, v0, param)
         # -- Save the Data in the dict --
-        param = SaveStatus_CallBack(Int(it), Nt, S, u0, param)
+        param = SaveStatus_CallBack(Int(it), Nt, S, v0, param)
     end
     SaveData(S, num_probe, ω0, dω)
 
